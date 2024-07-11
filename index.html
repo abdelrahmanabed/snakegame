@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="controlModal" class="modal">
+        <div class="modal-content">
+            <h2>اختر طريقة التحكم لتبدأ
+            </h2>
+            <button id="pcControlButton">PC</button>
+            <button id="touchControlButton">Touch Screen</button>
+        </div>
+    </div>
+    <div id="touchControls" class="touch-controls">
+        <button id="upButton">↑</button>
+        <button id="leftButton">←</button>
+        <button id="downButton">↓</button>
+        <button id="rightButton">→</button>
+    </div>
+    <div class="scorediv">
+        <div class="score">Score <span id="score">0</span></div>
+    <div class="high-score">High Score <span id="highScore">0</span></div>
+ </div> 
+ <div id="textarea">
+    <span>snake game by</span>
+    <span> Abdelrahman Abed</span>
+    <span>for</span>
+    <div><img src="logo.png" alt=""><span>CodeSlu</span></div>
+ </div>
+  <button id="startButton">Start Game</button>
+    <button id="pauseResumeButton">
+        <span>.</span>
+        <img src="pause.svg" alt=""/>
+    </button>
+    <div id="notice">مع اكل الطعام تزداد سرعة اللعب تدريجيا تفادى الاصطدام بالصخور او الحواف و حاول ان تحصل على اعلى تقييم
+        
+        <br/>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    <script src="main.js"></script>
+</body>
+</html>
