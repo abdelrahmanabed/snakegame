@@ -297,16 +297,23 @@ function gameLoop() {
     if (!gameRunning || gamePaused) return // stop the loop if the game is not running and also if it paused
     update(); 
     draw(); 
+    let head = snake.body[0];
 
+    let scrollX = head.x - window.innerWidth / 2 + snake.cellSize / 2;
+    let scrollY = head.y - window.innerHeight / 2 + snake.cellSize / 2;
     // for (let aiSnake of aiSnakes) {
     //     aiSnake.update();
     //     aiSnake.draw();
     // }
+    scrollX = Math.max(0, Math.min(scrollX, canvas.width - window.innerWidth));
+    scrollY = Math.max(0, Math.min(scrollY, canvas.height - window.innerHeight));
+
+
+    // scroll the window to follow the snake to make it always in center
+    window.scrollTo(scrollX, scrollY);
 
     setTimeout(gameLoop, loopInterval); // set a timeout to call gameLoop again creating a game loop control speed  
 
-    // scroll the window to follow the snake to make it always in center
-    window.scrollTo(snake.body[0].x - window.innerWidth / 2, snake.body[0].y - window.innerHeight / 2)
 }
 //touch
 upButton.addEventListener('click', () => {

@@ -1,19 +1,27 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #111;
-    font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
-    font-weight:700;
-}
 *{
     box-sizing: border-box;
 
 }
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #111;
+    font-family:  cursive;
+    font-optical-sizing: auto;
+    font-weight:700;
+    display: flex;
+   width: 100vh; 
+   height: 100vh;
+}
+
+
 canvas {
-    display: block;
     background-image: url('grass2.jpg'); 
-    background-size: 500px;}
+    background-size: 500px;
+   
+    margin: auto;
+        
+}
 .scorediv{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     position: fixed;
