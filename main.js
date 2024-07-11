@@ -154,8 +154,8 @@ class Snake {
                 this.length++; // increase the snake length if it eats the food
                 food.respawn(); // respawn food at a new position
                 eatSound.play();
-                if (loopInterval > 10) {
-                    loopInterval -= 1;
+                if (loopInterval > 15) {
+                    loopInterval -= 0.5;
                 }
                 if (this === snake) {
                     score++; // increase the score if the snake eats the food
@@ -260,7 +260,7 @@ for (let i = 0; i < 50; i++) {
     foods.push(new Food(image))
 }
 let rocks = [];
-for (let i = 0; i < 10; i++) { 
+for (let i = 0; i < 30; i++) { 
     let image = i % 2 === 0 ? rockImgone : rockImgtwo;
     rocks.push(new Rock(image))
 }
@@ -360,6 +360,7 @@ function startGame() {
     pauseResumeButton.style.display= 'flex'
     textarea.style.display= 'none'
     notice.style.display= 'none'
+    loopInterval=50
 
     gameRunning = true; 
     startButton.style.display = 'none'; 
@@ -381,7 +382,7 @@ function endGame() {
         highScoreElement.textContent = highScore; 
     }
     pauseResumeButton.style.display= 'none'
-
+loopInterval=50
 }
 
 pcControlButton.addEventListener('click', () => {
